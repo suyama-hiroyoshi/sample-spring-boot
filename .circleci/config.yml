@@ -8,6 +8,13 @@ orbs:
 # テストを実行するワークフロー
 workflows:
   maven_test:
+    triggers:
+      - schedule:
+          cron: "30 * * * *" # UTCの日時
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - maven/test:
           # completeフォルダを指定する
