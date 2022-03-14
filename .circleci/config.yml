@@ -14,7 +14,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
     jobs:
       - maven/test:
           # completeフォルダを指定する
