@@ -10,7 +10,7 @@ workflows:
   maven_test:
     triggers:
       - schedule:
-          cron: "0,10,20,30,40,50 * * * *" # UTCの日時
+          cron: "0 * * * *" # UTCの日時
           filters:
             branches:
               only:
