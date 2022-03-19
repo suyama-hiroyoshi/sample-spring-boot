@@ -1,12 +1,24 @@
+# GitHubリポジトリのActionsタブに表示される名称
 name: learn-github-actions
+# トリガーを指定(pushイベントを指定)
 on: [push]
+# ワークフローのすべてのジョブを定義
 jobs:
+  # check-bats-versionという名称のジョブを定義
   check-bats-version:
+    # 最新のUbuntuのランナーによって実行される
     runs-on: ubuntu-latest
+    # check-bats-versionジョブの全てのステップを定義
     steps:
+      # usesキーワードはアクションの指定
+      # actions/checkout@v2 はランナーにソースコードをチェックアウトするアクション
       - uses: actions/checkout@v2
+      # actions/setup-node@v2 はランナーにNode.jsをインストールするアクション
+      # withキーワードでバージョンを指定する
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+      # runキーワードはコマンドの指定
       - run: npm install -g bats
+      # ソフトウェアバージョンを出力パラメータを指定してbatsコマンドを実行
       - run: bats -v
