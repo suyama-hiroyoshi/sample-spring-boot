@@ -1,8 +1,7 @@
+# languageをjavaにするとjavaをビルドするために必要な環境が用意される
 language: java
 
-#install:
-#  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true
-
+# scriptフェーズでテストを実行する
 script:
   - cd complete
   - mvn test
