@@ -13,6 +13,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - run: cd complete
+      - run: mvn --help
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
